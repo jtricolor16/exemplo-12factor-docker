@@ -2,9 +2,9 @@ version: "2"
 
 
 services:
-  lb:
-    container_name: lb
-    build: lb
+  web:
+    container_name: web
+    build: web
     restart: unless-stopped
     networks:
       - backend
@@ -22,7 +22,7 @@ services:
     expose:
       - 80
     depends_on:
-      - lb
+      - web
 
 networks:
   backend:
